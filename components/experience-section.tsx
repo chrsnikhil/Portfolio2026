@@ -5,46 +5,45 @@ import Image from "next/image"
 export function ExperienceSection() {
   const experiences = [
     {
-      period: "Jan 2023 - Present",
-      title: "Mobile Product Designer",
+      period: "Sep 2025",
+      title: "ETH New Delhi Winner",
       description:
-        "Vel facilisis volutpat est velit egestas dui. Urna nec cidu praesent semper feugiat. Vulputate ut pharetra sit.",
-      icon: "/images/agency.png",
+        "Won Best Use of World Mini Kit for building a decentralized Airbnb platform. Enabled gasless authentication and verifiable identity for hosts and guests.",
+      icon: "https://github.com/ethglobal.png",
     },
     {
-      period: "Jan 2021 - Dec 2022",
-      title: "VP of Design",
+      period: "Oct 2025",
+      title: "ETH Online Winner",
       description:
-        "Vel facilisis volutpat est velit egestas dui. Urna nec cidu praesent semper feugiat. Vulputate ut pharetra sit.",
-      icon: "/images/company.png",
+        "Won Best Vincent App for ViVault, an automated asset rebalancing system powered by our proprietary volatility index. Optimized for risk-adjusted returns.",
+      icon: "https://github.com/ethglobal.png",
     },
     {
-      period: "Mar 2020 - Dec 2020",
-      title: "Head of Product Design",
+      period: "May 2025",
+      title: "Google Advanced Data Analytics",
       description:
-        "Vel facilisis volutpat est velit egestas dui. Urna nec cidu praesent semper feugiat. Vulputate ut pharetra sit.",
-      icon: "/images/busines.png",
+        "Completed the rigorous certification covering Python, SQL, Tableau, and Machine Learning. Analyzed blockchain datasets to predict DeFi market trends.",
+      icon: "https://img.icons8.com/color/480/google-logo.png",
     },
     {
-      period: "Sep 2017 - Feb 2020",
-      title: "Web Designer",
+      period: "Nov 2025",
+      title: "X Spaces Presentation",
       description:
-        "Vel facilisis volutpat est velit egestas dui. Urna nec cidu praesent semper feugiat. Vulputate ut pharetra sit.",
-      icon: "/images/startup.png",
+        "Presented ViVault to Vincent Stakeholders on X Spaces. Successfully demonstrated our in-house volatility index and asset rebalancing strategy to 500+ listeners.",
+      icon: "https://img.icons8.com/ios-filled/500/twitterx--v1.png",
     },
   ]
 
   return (
-    <section className="bg-black py-16 md:py-24">
+    <section id="achievements" className="bg-black py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-start">
           <div className="text-white pt-0 md:pt-12 md:sticky md:top-12 self-start">
             <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-6 md:mb-8 leading-[1.3]">
-              Take a look at my <span className="bg-[#6366F1] text-white px-3 py-1 inline-block">past experience</span>
+              Take a look at my <span className="bg-[#6366F1] text-white px-3 py-1 inline-block">achievements</span>
             </h2>
             <p className="text-gray-400 mb-8 md:mb-10 leading-relaxed text-base md:text-lg">
-              Eu pellentesque arcu ornare velit faucibus egestas gravida sed in purus enim molestie gravida imperdiet
-              integer.
+              A track record of building, shipping, and securing decentralized applications. From hackathon wins to auditing protocols.
             </p>
             <Button className="bg-white text-black hover:bg-gray-50 rounded-lg py-5 px-8 md:py-[22px] md:px-[62px] text-base md:text-lg font-semibold h-auto w-full sm:w-auto sm:min-w-[240px]">
               <FileText className="w-5 h-5" />
@@ -65,7 +64,7 @@ export function ExperienceSection() {
                       alt={exp.title}
                       width={48}
                       height={48}
-                      className="w-10 h-10 md:w-12 md:h-12 flex-shrink-0 rounded-full"
+                      className="w-10 h-10 md:w-12 md:h-12 flex-shrink-0 object-contain p-2"
                     />
                   </div>
                 </div>

@@ -2,7 +2,8 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { Canvas, extend, useFrame } from "@react-three/fiber";
-import { useGLTF, useTexture, Environment, Lightformer, Decal } from "@react-three/drei";
+import { useTexture, useGLTF, Environment, Lightformer, Decal } from "@react-three/drei";
+import { useLanyard } from "./lanyard-context";
 import {
     BallCollider,
     CuboidCollider,
@@ -52,7 +53,7 @@ export default function Lanyard({
         <div className="relative z-0 w-full h-screen flex justify-center items-center transform scale-100 origin-center">
             <Canvas
                 camera={{ position, fov }}
-                dpr={[1, isMobile ? 1.5 : 2]}
+                dpr={[1, 2]}
                 gl={{ alpha: transparent }}
                 onCreated={({ gl }) => gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1)}
             >
@@ -126,12 +127,13 @@ function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }: BandProps) {
     // Assets are served from /public/lanyard/*
     const { nodes, materials } = useGLTF("/lanyard/card.glb") as any;
     const texture = useTexture("/lanyard/lanyard.png") as unknown as THREE.Texture;
-    const myImage = useTexture("/1.jpg") as unknown as THREE.Texture;
+    const myImage = useTexture("/2.png") as unknown as THREE.Texture;
 
     useEffect(() => {
         if (myImage) {
             myImage.center.set(0.5, 0.5);
-            myImage.repeat.set(2.0, 2.0);
+            myImage.repeat.set(2.2, 2.2);
+            myImage.offset.set(0.06, 0.03); // Shifted more to left, vertical centered
         }
     }, [myImage]);
 
@@ -140,13 +142,31 @@ function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }: BandProps) {
     );
     const [dragged, drag] = useState<false | THREE.Vector3>(false);
     const [hovered, hover] = useState(false);
+    const { bounceTrigger } = useLanyard();
 
-    useRopeJoint(fixed, j1, [[0, 0, 0], [0, 0, 0], 1]);
-    useRopeJoint(j1, j2, [[0, 0, 0], [0, 0, 0], 1]);
-    useRopeJoint(j2, j3, [[0, 0, 0], [0, 0, 0], 1]);
+    useEffect(() => {
+        if (bounceTrigger > 0 && card.current) {
+            // Apply impulse to bounce
+            card.current.wakeUp();
+            card.current.applyImpulse({
+                x: (Math.random() - 0.5) * 2,
+                y: 5,
+                z: (Math.random() - 0.5) * 1
+            }, true);
+            card.current.applyTorqueImpulse({
+                x: (Math.random() - 0.5) * 0.5,
+                y: (Math.random() - 0.5) * 0.5,
+                z: (Math.random() - 0.5) * 0.5
+            }, true);
+        }
+    }, [bounceTrigger]);
+
+    useRopeJoint(fixed, j1, [[0, 0, 0], [0, 0, 0], 0.5]);
+    useRopeJoint(j1, j2, [[0, 0, 0], [0, 0, 0], 0.5]);
+    useRopeJoint(j2, j3, [[0, 0, 0], [0, 0, 0], 0.5]);
     useSphericalJoint(j3, card, [
         [0, 0, 0],
-        [0, 1.45, 0],
+        [0, 2.45, 0],
     ]);
 
     useEffect(() => {
@@ -214,7 +234,7 @@ function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }: BandProps) {
                 >
                     <CuboidCollider args={[0.8, 1.125, 0.01]} />
                     <group
-                        scale={2.25}
+                        scale={3.0}
                         position={[0, -1.2, -0.05]}
                         onPointerOver={() => hover(true)}
                         onPointerOut={() => hover(false)}
@@ -260,7 +280,9 @@ function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }: BandProps) {
                     useMap
                     map={texture}
                     repeat={[-4, 1]}
-                    lineWidth={1}
+                    lineWidth={1.7}
+                    opacity={1}
+                    transparent={false}
                 />
             </mesh>
         </>

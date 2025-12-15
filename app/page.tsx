@@ -9,7 +9,7 @@ import { AboutSection } from "@/components/about-section"
 import { PortfolioSection } from "@/components/portfolio-section"
 import { ExperienceSection } from "@/components/experience-section"
 import { TestimonialsSection } from "@/components/testimonials-section"
-import { ArticlesSection } from "@/components/articles-section"
+
 import { Footer } from "@/components/footer"
 import { LanyardProvider, useLanyard } from "@/components/lanyard-context"
 
@@ -18,9 +18,10 @@ function HomeContent() {
 
   return (
     <main className="min-h-screen bg-[#FFFFFF] relative">
+      {/* Lanyard always visible, hanging from right side of navbar */}
       <div
-        className={`fixed top-0 left-0 w-full h-screen z-10 pointer-events-none transition-all duration-700 ease-in-out ${showLanyard ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full"
-          }`}
+        className="absolute -top-48 right-8 w-[800px] h-[1200px] z-10 pointer-events-none"
+        style={{ transform: 'scale(1.3)', transformOrigin: 'top right' }}
       >
         <Lanyard />
       </div>
@@ -32,7 +33,7 @@ function HomeContent() {
       <PortfolioSection />
       <ExperienceSection />
       <TestimonialsSection />
-      <ArticlesSection />
+
       <Footer />
     </main>
   )

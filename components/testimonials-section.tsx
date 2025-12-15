@@ -8,13 +8,10 @@ export function TestimonialsSection() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 pt-4 md:pt-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-[1.3]">
-            What my clients say
-            <br />
-            about <span className="bg-[#2F81F7] text-white px-3 py-1 inline-block">my work</span>
+            Why you should <span className="bg-[#2F81F7] text-white px-3 py-1 inline-block">hire me?</span>
           </h2>
           <p className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto pb-8">
-            Lacus, adipiscing lectus convallis purus aliquet cursus magnaol montes augue donec cras turpis ultrices
-            nulla sed doler.
+            Because I don't just write code—I build products that solve real problems, scale effectively, and drive business growth.
           </p>
         </div>
 
@@ -33,21 +30,20 @@ export function TestimonialsSection() {
 
               <div className="md:max-w-[65%]">
                 <p className="text-sm md:text-base lg:text-lg mb-6 leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                  dolore magna aliqua. Ut enim ad minim et minim quis nostrud exercitation ullamco laboris.
+                  I combine deep technical expertise with a product-first mindset. Whether it's optimizing complex systems for performance or building intuitive user interfaces from scratch, I focus on delivering tangible results. I communicate clearly, ship fast, and care about the details that matter to your users.
                 </p>
 
                 <div>
-                  <div className="font-bold text-base md:text-lg">Lily Woods</div>
-                  <div className="text-gray-600 text-sm md:text-base">VP of Design at Google</div>
+                  <div className="font-bold text-base md:text-lg">Ready to build?</div>
+                  <div className="text-gray-600 text-sm md:text-base">Let's create something exceptional.</div>
                 </div>
               </div>
             </div>
 
-            <div className="absolute -right-20 top-1/2 -translate-y-1/2 w-[440px] h-[440px] rounded-full overflow-hidden hidden lg:block">
+            <div className="absolute -right-20 top-1/2 -translate-y-1/2 w-[440px] h-[440px] rounded-full overflow-hidden hidden lg:block border-4 border-black bg-[#2F81F7]">
               <Image
-                src="/images/633b277fc2e3697bb14c6a4f-frances.png"
-                alt="Client testimonial"
+                src="/images/about-me.svg"
+                alt="Me"
                 fill
                 className="object-cover"
               />

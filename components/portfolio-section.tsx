@@ -1,25 +1,28 @@
+
 import { ArrowRight } from "lucide-react"
 import Image from "next/image"
 
 export function PortfolioSection() {
   const projects = [
     {
-      title: "Studio user research and analysis",
+      title: "Video Editing",
       description:
-        "In ultricies viverra sed at hendrerit drogon nunc scelerisque nisl pellentesque et dignissim at aenean tempor adipiscing eget mi diam at tempus.",
-      tag: "UI/UX Design",
-      logo: "/images/studio-logo.svg",
+        "Capturing the energy and innovation of hackathons. I edit dynamic recaps and promo videos that highlight the spirit of building and shipping.",
+      tag: "Content Creation",
+      logo: null,
       bgColor: "bg-[#6366F1]",
-      illustration: "/images/studio-workspace.svg",
+      illustration: "/images/video_editing.png",
+      link: null,
     },
     {
-      title: "Venture Workspace web app redesign",
+      title: "Fitness",
       description:
-        "In ultricies viverra sed at hendrerit drogon nunc scelerisque nisl pellentesque et dignissim at aenean tempor adipiscing eget mi diam at tempus.",
-      tag: "UI/UX Design",
-      logo: "/images/venture-logo.svg",
-      bgColor: "bg-[#2F81F7]",
-      illustration: "/images/venture-workspace.svg",
+        "Through consistent discipline and dedication, I lost weight and transformed my lifestyle. I believe physical resilience fuels mental clarity and coding performance.",
+      tag: "Lifestyle",
+      logo: null,
+      bgColor: "bg-[#FF6B7A]",
+      illustration: "/images/fitness.png",
+      link: null,
     },
   ]
 
@@ -28,8 +31,8 @@ export function PortfolioSection() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            Take a look at my <br />
-            <span className="bg-[#FFC224] text-black px-3 py-1 inline-block">design portfolio</span>
+            Beyond coding: My <br />
+            <span className="bg-[#FFC224] text-black px-3 py-1 inline-block">other passions</span>
           </h2>
         </div>
 
@@ -41,13 +44,15 @@ export function PortfolioSection() {
             >
               <div className="p-6 md:p-12 flex flex-col justify-center bg-white">
                 <div className="flex items-center gap-3 mb-6">
-                  <Image
-                    src={project.logo || "/placeholder.svg"}
-                    alt={`${project.title} logo`}
-                    width={120}
-                    height={32}
-                    className="h-6 md:h-8 w-auto"
-                  />
+                  {project.logo && (
+                    <Image
+                      src={project.logo}
+                      alt={`${project.title} logo`}
+                      width={120}
+                      height={32}
+                      className="h-6 md:h-8 w-auto"
+                    />
+                  )}
                 </div>
 
                 <span className="inline-block bg-black text-white text-xs font-semibold px-4 py-1.5 rounded-full mb-6 w-fit">
@@ -62,13 +67,16 @@ export function PortfolioSection() {
                   {project.description}
                 </p>
 
-                <a
-                  href="#"
-                  className="flex items-center gap-2 font-semibold text-[#0B0B0B] hover:gap-3 transition-all text-sm md:text-base"
-                >
-                  View case study
-                  <ArrowRight className="w-4 h-4" />
-                </a>
+                {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+                {(project as any).link && (
+                  <a
+                    href={(project as any).link}
+                    className="flex items-center gap-2 font-semibold text-[#0B0B0B] hover:gap-3 transition-all text-sm md:text-base"
+                  >
+                    View case study
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
+                )}
               </div>
 
               <div className={`${project.bgColor} relative overflow-hidden min-h-[250px] md:min-h-[500px]`}>
@@ -83,19 +91,7 @@ export function PortfolioSection() {
           ))}
         </div>
 
-        <div className="flex justify-center">
-          <button className="bg-black text-white px-6 md:px-8 py-4 md:py-5 rounded-[12px] font-semibold hover:bg-gray-900 transition-colors flex items-center justify-center gap-2 w-full sm:w-auto text-sm md:text-base">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-              />
-            </svg>
-            Browse all portfolio
-          </button>
-        </div>
+
       </div>
     </section>
   )

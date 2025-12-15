@@ -1,4 +1,4 @@
-import { User } from "lucide-react"
+import { Linkedin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 
@@ -15,11 +15,12 @@ export function AboutSection() {
         <div className="space-y-6 md:space-y-8">
           <div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-              Who's behind all this <span className="bg-[#2F81F7] text-white px-3 py-1 inline-block">great work?</span>
+              Why do I <span className="bg-[#2F81F7] text-white px-3 py-1 inline-block">do all of this?</span>
             </h2>
             <p className="text-gray-600 text-base md:text-lg leading-relaxed">
-              Eu pellentesque arcu ornare velit faucibus egestas gravida sed in purus enim molestie gravida imperdiet
-              integer.
+              I believe in the power of decentralization to reshape digital ownership and interaction.
+              Building transparent, permissionless, and efficient systems isn't just about code—it's about
+              crafting the infrastructure for the next generation of the internet.
             </p>
           </div>
 
@@ -27,9 +28,9 @@ export function AboutSection() {
             <div className="flex gap-4 items-start">
               <div className="w-5 h-5 bg-[#6366F1] border-2 border-black rounded-[5px] flex-shrink-0 mt-1"></div>
               <div>
-                <h3 className="text-lg md:text-xl font-bold mb-2">15+ years of experience</h3>
+                <h3 className="text-lg md:text-xl font-bold mb-2">Web3 & Fullstack Expert</h3>
                 <p className="text-gray-600 text-sm md:text-base">
-                  Eu pellentesque arcu ornare velit faucibus egestas me gravida sed in purus enim molestie gravida.
+                  Building comprehensive solutions that bridge the gap between traditional web technologies and decentralized protocols.
                 </p>
               </div>
             </div>
@@ -37,18 +38,20 @@ export function AboutSection() {
             <div className="flex gap-4 items-start">
               <div className="w-5 h-5 bg-[#FF6B7A] border-2 border-black rounded-[5px] flex-shrink-0 mt-1"></div>
               <div>
-                <h3 className="text-lg md:text-xl font-bold mb-2">100+ successfull projects</h3>
+                <h3 className="text-lg md:text-xl font-bold mb-2">Smart Contract Specialist</h3>
                 <p className="text-gray-600 text-sm md:text-base">
-                  Eu pellentesque arcu ornare velit faucibus egestas me gravida sed in purus enim molestie gravida.
+                  Specialized in writing secure smart contracts in <span className="font-bold">Solidity</span> and <span className="font-bold">Move</span> for complex DeFi and volatility index systems.
                 </p>
               </div>
             </div>
           </div>
 
-          <Button className="bg-[#0B0B0B] text-white hover:bg-black/90 rounded-lg py-5 px-8 md:py-[22px] md:px-[62px] text-base md:text-lg font-semibold h-auto w-full sm:w-auto sm:min-w-[240px]">
-            <User className="w-5 h-5" />
-            More about me
-          </Button>
+          <a href="https://www.linkedin.com/in/chris-nikhil-6883ba290/" target="_blank" rel="noopener noreferrer">
+            <Button className="bg-[#0B0B0B] text-white hover:bg-[#0B0B0B] rounded-lg py-5 px-8 md:py-[22px] md:px-[62px] text-base md:text-lg font-semibold h-auto w-full sm:w-auto sm:min-w-[240px] border-[3px] border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] transition-all">
+              <Linkedin className="w-5 h-5" />
+              Connect on LinkedIn
+            </Button>
+          </a>
         </div>
       </div>
     </section>
