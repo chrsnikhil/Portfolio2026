@@ -7,7 +7,7 @@ export function HeroSection() {
       <div className="max-w-7xl mx-auto gap-12 items-center">
         <div className="space-y-6 max-w-3xl">
           <h1 className="text-[42px] leading-[50px] md:text-[72px] font-bold md:leading-[85px]">
-            I'm <span className="bg-[#FF6B7A] text-white px-3 py-1 inline-block">Chris Nikhil</span>, a Web Designer from{" "}
+            I'm <span className="bg-[#FF6B7A] text-white px-3 py-1 inline-block">Chris Nikhil</span>, a Web Developer from{" "}
             <span className="bg-[#2F81F7] text-white px-3 py-1 inline-block">Chennai</span>
           </h1>
 
