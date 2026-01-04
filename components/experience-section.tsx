@@ -45,10 +45,12 @@ export function ExperienceSection() {
             <p className="text-gray-400 mb-8 md:mb-10 leading-relaxed text-base md:text-lg">
               A track record of building, shipping, and securing decentralized applications. From hackathon wins to auditing protocols.
             </p>
-            <Button className="bg-white text-black hover:bg-gray-50 rounded-lg py-5 px-8 md:py-[22px] md:px-[62px] text-base md:text-lg font-semibold h-auto w-full sm:w-auto sm:min-w-[240px]">
-              <FileText className="w-5 h-5" />
-              See full resume
-            </Button>
+            <a href="/Chris%20Nikhil%20Resume.pdf" download="Chris Nikhil Resume.pdf">
+              <Button className="bg-white text-black hover:bg-gray-50 rounded-lg py-5 px-8 md:py-[22px] md:px-[62px] text-base md:text-lg font-semibold h-auto w-full sm:w-auto sm:min-w-[240px]">
+                <FileText className="w-5 h-5" />
+                See full resume
+              </Button>
+            </a>
           </div>
 
           <div className="space-y-6">

@@ -16,7 +16,7 @@ export function HeroSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-7 pt-4">
-            <a href="/resume.pdf" download className="w-full sm:w-auto">
+            <a href="/Chris%20Nikhil%20Resume.pdf" download="Chris Nikhil Resume.pdf" className="w-full sm:w-auto">
               <Button className="bg-[#0B0B0B] text-white hover:bg-[#0B0B0B] rounded-lg py-5 px-8 md:py-[22px] md:px-[62px] text-base md:text-lg font-semibold h-auto w-full sm:w-auto sm:min-w-[240px] border-[3px] border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] transition-all">
                 <Download className="w-5 h-5 mr-2" />
                 Download Resume
